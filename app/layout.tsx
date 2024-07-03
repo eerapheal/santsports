@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-
+import Image from "next/image";
+import BG from "../public/images/Sant-sport-background-logo.svg"
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -16,7 +17,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <div className="relative bg-black min-h-screen">
+          <div className="absolute inset-0">
+            <Image 
+            src={BG}
+            alt="Sant-sport-background-logo"
+            title="Sant-sport-background-logo"
+            className="object-cover w-full h-full"
+            width={500}
+            height={500}
+            />
+          </div>
+        </div>
+        {children}
+      </body>
     </html>
   );
 }
