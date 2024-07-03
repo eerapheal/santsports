@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
 import BG from "../public/images/Sant-sport-background-logo.svg";
+import NavBar from "@/components/header/navBar/navBar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -30,7 +31,10 @@ export default function RootLayout({
             />
           </div>
           <div className="absolute inset-0 w-full h-screen bg-gradient-to-b from-black/10 to-black">
-            <div className="relative">{children}</div>
+            <div className="relative">
+              <NavBar />
+              {children}
+              </div>
           </div>
         </div>
       </body>
