@@ -2,8 +2,15 @@ import "server-only";
 
 import { Standing } from "../type";
 import moment from "moment";
+import { USE_SAMPLE } from "../sampleData/useSampleData";
+import getStandingsSample from "./getStandingsSample";
 
 export default async function getStandings(): Promise<Standing[]> {
+  // set use_sample data to false while making api calls
+  if (USE_SAMPLE) {
+    return getStandingsSample();
+  }
+
   const currentTime = moment();
 
   const month = currentTime.month();
