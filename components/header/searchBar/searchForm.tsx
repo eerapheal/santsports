@@ -20,7 +20,8 @@ const SearchForm = ({ teamData }: { teamData: Team[] }) => {
     <div>
       <input
         type="text"
-
+        value={searchTerm}
+        onChange={handleSearchChange}
         placeholder="Search Here"
         className="w-full bg-gradient-to-r from-neutral-100/5 to-black/25
     bg-transparent p-2 outline-none border-neutral-100/00 border-[1px]
