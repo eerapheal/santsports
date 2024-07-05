@@ -1,6 +1,11 @@
-import React from "react";
+import { Team } from "@/utils/type";
+import React, { useState } from "react";
 
-const SearchForm = () => {
+const SearchForm = ({ teamData }: { teamData: Team[] }) => {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [focusedIndex, setFocusedIndex] = useState(-1);
+  const [showFilteredBox, setShowFilteredBox] = useState(false);
+
   return (
     <div>
       <input
