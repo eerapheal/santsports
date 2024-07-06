@@ -1,10 +1,30 @@
 "use client";
 import { Standing } from "@/utils/type";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const StandingFixtures = ({ standingData }: { standingData: Standing[] }) => {
   const menuItems = ["EPL", "La Liga", "Bundesliga", "Serie A", "Ligue 1"];
   const [activeTab, setActiveTab] = useState(0);
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  const scrollToTab = (index: number) => {
+    const container = menuRef.current;
+    if (container) {
+      const tab = container.children[index] as HTMLElement;
+      tab?.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "center",
+      });
+    }
+  };
+
+  const handleTabClick = (index: number) => {
+    setActiveTab(index);
+    scrollToTab(index);
+  };
+
+  useEffect(() => {}, []);
 
   return (
     <div className="flex flex-col w-full max-w-7xl bg-gradient-to-br from-blue-700 lg:flex-row">
@@ -16,7 +36,7 @@ const StandingFixtures = ({ standingData }: { standingData: Standing[] }) => {
               {menuItems.map((items, i) => (
                 <button
                   key={i}
-                  onClick={() => setActiveTab(i)}
+                  onClick={() => handleTabClick(i)}
                   className={`w-full p-4 rounded md:text-base text-xs font-bold ${
                     i === activeTab
                       ? "text-neutral-100"
