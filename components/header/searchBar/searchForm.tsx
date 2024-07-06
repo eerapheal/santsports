@@ -29,8 +29,9 @@ const SearchForm = ({ teamData }: { teamData: Team[] }) => {
       } else {
         length = filteredTeams.length;
       }
+      console.log(focusedIndex);
       setFocusedIndex((prevIndex) =>
-        prevIndex < length - 1 ? prevIndex - 1 : prevIndex
+        prevIndex < length - 1 ? prevIndex + 1 : prevIndex
       );
     } else if (event.key === "ArrowUp") {
       event.preventDefault();
@@ -79,15 +80,18 @@ const SearchForm = ({ teamData }: { teamData: Team[] }) => {
     rounded-xl hover:border-blue-400 focus:border-blue-400/10 text-neutral-100 placeholder:text-neutral-100/00"
       />
       {searchTerm && filteredTeams.length > 0 && showFilteredBox && (
-        <div className="absolute border-[1px] border-blue-400 hover:border-none rounded-xl left-0 w-full max-w-md bg-black/80 z-20 flex flex-col">
+        <div
+          ref={teamListRef}
+          className="absolute border-[1px] border-blue-400 rounded-xl top-full left-0 w-full max-w-md bg-black/80 z-20 flex flex-col"
+        >
           {filteredTeams.slice(0, 10).map((standing, i) => (
             <Link
               href={`/team/${standing.team.id}`}
               key={standing.team.id}
-              className={`p-2 text-neutral-100 ${
-                i === focusedIndex ? "bg-neutral-100/40" : ""
+              className={`p-2 text-neutral-100 hover:bg-blue-400 ${
+                i === focusedIndex ? "bg-blue-400" : ""
               }`}
-              onClick={handleTeamItemClick}
+              onClick={() => handleTeamItemClick()}
             >
               {standing.team.name}{" "}
             </Link>
