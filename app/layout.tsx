@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="relative bg-black h-screen">
+        <div className="relative bg-blue-400/40 h-screen">
           <div className="absolute inset-0">
             <Image
               src={BG}
