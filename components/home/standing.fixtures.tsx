@@ -157,8 +157,17 @@ const StandingFixtures = ({ standingData }: { standingData: Standing[] }) => {
           </div>
         </div>
       </div>
-      <div className="flex text-neutral-100 font-bold justify-center items-center lg:w-2/5 p-10 lg:pr-5 pb-10 lg:p-0 ">
-        Fixtures
+      <div className="flex justify-center items-center lg:w-2/5 p-10 lg:pr-10 pb-10 lg:pt-10 ">
+        <div className="flex flex-col justify-center items-center bg-gradient-to-b from-black/40 w-full  text-neutral-100 rounded-xl h-full">
+        <div className="w-full flex flex-col justify-center items-center">
+          <div className="p-2 font-bold">
+            Upcoming Matches
+          </div>
+          <div className="flex flex-col w-full justify-center items-center pb-5 overflow-hidden">
+            {/* fixtures */}
+          </div>
+        </div>
+        </div>
       </div>
     </div>
   );
