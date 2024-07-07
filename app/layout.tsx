@@ -19,8 +19,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="relative bg-blue-400/40 h-screen">
-          <div className="absolute inset-0">
+        <div className="relative bg-blue-400/40 min-h-[900px]">
+          <div className="absolute inset-0 h-full">
             <Image
               src={BG}
               alt="Sant-sport-background-logo"
@@ -30,11 +30,11 @@ export default function RootLayout({
               height={500}
             />
           </div>
-          <div className="absolute inset-0 w-full h-screen bg-gradient-to-b from-black/10 to-black">
+          <div className="absolute inset-0 w-full h-full bg-gradient-to-b from-black/10 to-black">
             <div className="relative">
               <NavBar />
               {children}
-              </div>
+            </div>
           </div>
         </div>
       </body>
