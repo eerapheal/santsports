@@ -56,7 +56,7 @@ const StandingFixtures = ({ standingData }: { standingData: Standing[] }) => {
                   className={`w-full p-4 rounded md:text-base font-bold ${
                     i === activeTab
                       ? "text-neutral-100"
-                      : "text-gray-300 bg-black/10"
+                      : "text-gray-300 bg-black/40"
                   }`}
                 >
                   {items}
