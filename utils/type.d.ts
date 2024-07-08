@@ -107,15 +107,18 @@ type Fixture = {
   league: LeagueFixtures;
   teams: Teams;
   goals: Gaols;
-  score: ScrollRestoration;
+  score: Score;
 };
+
+type AllFixtures = {
+  name: string,
+  fixtures: Fixture[]
+}
+
 export {
   Standing,
-  Games,
   Team,
   League,
   Fixture,
-  Score,
-  fixtureInfo,
-  LeagueFixtures,
+  AllFixtures
 };
