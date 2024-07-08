@@ -1,5 +1,5 @@
 type Standing = {
-  league: league;
+  league: League;
 };
 
 type League = {
@@ -9,7 +9,7 @@ type League = {
   logo: string;
   flag: string;
   season: string;
-  standings: [Team[]];
+  standings: Team[][];
 };
 
 type Team = {
@@ -77,43 +77,42 @@ type LeagueFixtures = {
 type Teams = {
   home: {
     id: number;
-    name: strung;
-    logo: sting;
+    name: string;
+    logo: string;
     winner: boolean;
   };
   away: {
     id: number;
-    name: strung;
-    logo: sting;
+    name: string;
+    logo: string;
     winner: boolean;
   };
 };
 
-type Gaols = {
+type Goals = {
   home: number;
   away: number;
 };
 
 type Score = {
-  halftime: Gaols;
-  fulltime: Gaols;
-  teams: Teams;
-  goals: Gaols;
-  score: Score;
+  halftime: Goals;
+  fulltime: Goals;
+  extratime: Goals;
+  penalty: Goals;
 };
 
 type Fixture = {
   fixture: FixtureInfo;
   league: LeagueFixtures;
   teams: Teams;
-  goals: Gaols;
+  goals: Goals;
   score: Score;
 };
 
 type AllFixtures = {
-  name: string,
-  fixtures: Fixture[]
-}
+  name: string;
+  fixtures: Fixture[];
+};
 
 export {
   Standing,
