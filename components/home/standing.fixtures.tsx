@@ -1,9 +1,10 @@
 "use client";
-import { Standing } from "@/utils/type";
+import { AllFixtures, Standing } from "@/utils/type";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
+import FixturesByLeague from "./fixtures/fixturesByLeague";
 
-const StandingFixtures = ({ standingData }: { standingData: Standing[] }) => {
+const StandingFixtures = ({ standingData, filteredFixtures }: { standingData: Standing[], filteredFixtures: AllFixtures[] }) => {
   const menuItems = ["EPL", "La Liga", "Bundesliga", "Serie A", "Ligue 1"];
   const [activeTab, setActiveTab] = useState(0);
   const menuRef = useRef<HTMLDivElement>(null);
@@ -53,11 +54,10 @@ const StandingFixtures = ({ standingData }: { standingData: Standing[] }) => {
                 <button
                   key={i}
                   onClick={() => handleTabClick(i)}
-                  className={`w-full p-4 rounded md:text-base font-bold ${
-                    i === activeTab
+                  className={`w-full p-4 rounded md:text-base font-bold ${i === activeTab
                       ? "text-neutral-100"
                       : "text-gray-300 bg-black/40"
-                  }`}
+                    }`}
                 >
                   {items}
                 </button>
@@ -92,9 +92,8 @@ const StandingFixtures = ({ standingData }: { standingData: Standing[] }) => {
                       <Link
                         href={`/team/${team.team.id}`}
                         key={j + team.team.name}
-                        className={`flex w-full p-1 hover:bg-blue-400/40 ${
-                          j % 2 === 0 ? "bg-black/40" : ""
-                        }`}
+                        className={`flex w-full p-1 hover:bg-blue-400/40 ${j % 2 === 0 ? "bg-black/40" : ""
+                          }`}
                       >
                         <div className="w-1/12 text-xs flex px-2 justify-center items-center">
                           {j + 1}
@@ -136,15 +135,14 @@ const StandingFixtures = ({ standingData }: { standingData: Standing[] }) => {
                             <div
                               key={char + i}
                               className={`opacity-80 w-3 h-3 m-[1px] rounded-full
-                                                                        ${
-                                                                          char ===
-                                                                          "L"
-                                                                            ? "bg-red-500"
-                                                                            : char ===
-                                                                              "D"
-                                                                            ? "bg-gray-500"
-                                                                            : "bg-green-500"
-                                                                        }`}
+                                                                        ${char ===
+                                  "L"
+                                  ? "bg-red-500"
+                                  : char ===
+                                    "D"
+                                    ? "bg-gray-500"
+                                    : "bg-green-500"
+                                }`}
                             ></div>
                           ))}
                         </div>
@@ -159,14 +157,32 @@ const StandingFixtures = ({ standingData }: { standingData: Standing[] }) => {
       </div>
       <div className="flex justify-center items-center lg:w-2/5 p-10 lg:pr-10 pb-10 lg:pt-10 ">
         <div className="flex flex-col justify-center items-center bg-gradient-to-b from-black/40 w-full  text-neutral-100 rounded-xl h-full">
-        <div className="w-full flex flex-col justify-center items-center">
-          <div className="p-2 font-bold">
-            Upcoming Matches
+          <div className="w-full flex flex-col justify-center items-center">
+            <div className="p-2 font-bold">
+              Upcoming Matches
+            </div>
+            <div className="flex flex-col w-full justify-center items-center pb-5 overflow-hidden">
+              {/* fixtures */}
+              {
+                menuItems.map((leagueName, i) => {
+                  return (
+                    activeTab === i && (
+                      filteredFixtures.map((league, j) => {
+                        if (league.name === leagueName) {
+                          return (
+                            <FixturesByLeague
+                              fixturesData={league.fixtures}
+                              key={league.name + j}
+                            />
+                          )
+                        }
+                      })
+                    )
+                  )
+                })
+              }
+            </div>
           </div>
-          <div className="flex flex-col w-full justify-center items-center pb-5 overflow-hidden">
-            {/* fixtures */}
-          </div>
-        </div>
         </div>
       </div>
     </div>
