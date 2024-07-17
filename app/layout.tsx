@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="relative bg-blue-400/40 min-h-[900px]">
+        <div className="relative bg-blue-400/40 min-h-[1700px] lg:min-h-[900px]">
           <div className="absolute inset-0 h-full">
             <Image
               src={BG}

@@ -1,12 +1,12 @@
 import { Metadata } from "next";
-import React, { Suspense } from "react";
+import { Suspense } from "react";
 
-import { Standing } from "@/utils/type";
+import { AllFixtures, Standing } from "@/utils/type";
 import getStandings from "@/utils/getApis/getStanding";
 import Loading from "./loading";
-const StandingFixtures = React.lazy(
-  () => import("@/components/home/standing.fixtures")
-);
+import getFixturesForFiveLeague from "@/utils/getApis/getFixturesForFiveLeague";
+import  StandingFixtures from "@/components/home/standing.fixtures"
+
 
 export const metadata: Metadata = {
   title:
@@ -19,10 +19,16 @@ export const metadata: Metadata = {
 
 const HomePage = async () => {
   const standingData: Standing[] = await getStandings();
+  const filteredFixtures: AllFixtures[] = await getFixturesForFiveLeague();
+  console.log(filteredFixtures);
+
   return (
     <div className="flex flex-col justify-center items-center w-full md:p-10">
       <Suspense fallback={<Loading />}>
-        <StandingFixtures standingData={standingData} />
+        <StandingFixtures
+          standingData={standingData}
+          filteredFixtures={filteredFixtures}
+        />
       </Suspense>
     </div>
   );
