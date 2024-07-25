@@ -1,6 +1,7 @@
 "use client";
 import { AllFixtures, Standing } from "@/utils/type";
 import Link from "next/link";
+import Image from "next/image"
 import React, { useEffect, useRef, useState } from "react";
 import FixturesByLeague from "./fixtures/fixturesByLeague";
 
@@ -55,8 +56,8 @@ const StandingFixtures = ({ standingData, filteredFixtures }: { standingData: St
                   key={i}
                   onClick={() => handleTabClick(i)}
                   className={`w-full p-4 rounded md:text-base font-bold ${i === activeTab
-                      ? "text-neutral-100"
-                      : "text-gray-300 bg-black/40"
+                    ? "text-neutral-100"
+                    : "text-gray-300 bg-black/40"
                     }`}
                 >
                   {items}
@@ -99,10 +100,12 @@ const StandingFixtures = ({ standingData, filteredFixtures }: { standingData: St
                           {j + 1}
                         </div>
                         <div className="w-3/12 text-xs flex items-center">
-                          <img
+                          <Image
                             src={team.team.logo}
                             alt={team.team.name}
-                            className="h-4 w-4 mr-2"
+                            className=" mr-2"
+                            width={12}
+                            height={12}
                           />
                           {team.team.name}
                         </div>
