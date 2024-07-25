@@ -29,7 +29,7 @@ const SearchForm = ({ teamData }: { teamData: Team[] }) => {
       } else {
         length = filteredTeams.length;
       }
-      console.log(focusedIndex);
+      console.error(focusedIndex);
       setFocusedIndex((prevIndex) =>
         prevIndex < length - 1 ? prevIndex + 1 : prevIndex
       );
