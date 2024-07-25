@@ -1,15 +1,127 @@
-import React from 'react'
+import GetFixtureByFixtureId from "@/utils/getApis/getFixtureByFixtureId"
+import LocalTime from "@/utils/localTime/localTime"
+import { Fixture } from "@/utils/type"
+import Image from "next/image"
+import Link from "next/link"
+import { Metadata } from "next";
 
-type PageParams = {
+export const metadata: Metadata = {
+  title:
+    process.env.NEXT_PUBLIC_APP_NAME ||
+    "SantSport | All football match live scores and results Information ",
+  description:
+    process.env.NEXT_PUBLIC_APP_DESC ||
+    "All football match information ranging from EPL LA LIGA LEAGUE 1. get all the live scores, previous matches results, upcoming matches, team form, top scores, all league and countries  football games result and fixtures.",
+};
+
+type PageProps = {
   params: {
     id: string
   }
-};
+}
 
-const page = ({params}: PageParams) => {
+const Page = async ({
+  params
+}: PageProps) => {
+
+  let fixtureByFixtureId: Fixture | undefined = await GetFixtureByFixtureId(parseInt(params.id));
+
+  if (!fixtureByFixtureId) {
+    return (
+      <div className="flex w-full justify-center items-center py-5">
+        <div className="flex max-w-7xl p-5 w-full md:flex-row justify-center items-center text-neutral-100">
+          No Fixture Info Available
+        </div>
+      </div>
+    )
+  }
+
   return (
-    <div>{params.id}</div>
+    <div className="flex flex-col w-full justify-center items-center py-10 md:p-10 text-neutral-100">
+      <div className="flex w-full max-w-7xl items-center justify-center perspective pb-10 md:pb-20">
+        <div className="w-1/3 flex justify-center rounded-full animate-logo-pop-left logo-shadow">
+          <Link
+            href={`../team/${fixtureByFixtureId.teams.home.id}`}
+          >
+            <Image
+              src={fixtureByFixtureId.teams.home.logo}
+              alt="HomeLogoMatch"
+              width={250}
+              height={250}
+            />
+          </Link>
+        </div>
+        <div className="w-1/3 flex justify-center items-center flex-col h-56">
+          <div className="h-1/5 flex justify-center items-center text-sm md:text-xl text-center">
+            <LocalTime fixture={fixtureByFixtureId} />
+          </div>
+          <div className="h-3/5 flex justify-center items-center md:text-5xl text-2xl">
+            <div className="flex flex-col justify-center items-center">
+              {fixtureByFixtureId.score.fulltime.home}
+              {
+                fixtureByFixtureId.score.penalty.home !== null ?
+                  <div className="flex flex-col justify-center items-center text-sm">
+                    <div>(et. ) {fixtureByFixtureId.score.extratime.home}</div>
+                    <div>(pen. ) {fixtureByFixtureId.score.penalty.home}</div>
+                  </div> : fixtureByFixtureId.score.extratime.home !== null ?
+                    <div className="text-sm">
+                      (et. ) {fixtureByFixtureId.score.extratime.home}
+                    </div> : null
+              }
+            </div>
+            <div>
+              -
+            </div>
+            <div className="flex flex-col justify-center items-center">
+              {fixtureByFixtureId.score.fulltime.away}
+              {
+                fixtureByFixtureId.score.penalty.away !== null ?
+                  <div className="flex flex-col justify-center items-center text-sm">
+                    <div>(et. ) {fixtureByFixtureId.score.extratime.away}</div>
+                    <div>(pen. ) {fixtureByFixtureId.score.penalty.away}</div>
+                  </div> : fixtureByFixtureId.score.extratime.away !== null ?
+                    <div className="text-sm">
+                      (et. ) {fixtureByFixtureId.score.extratime.away}
+                    </div> : null
+              }
+            </div>
+          </div>
+          <div className="h-1/5 flex justify-center items-center"></div>
+        </div>
+        <div className="w-1/3 flex justify-center rounded-full animate-logo-pop-right logo-shadow">
+          <Link
+            href={`../team/${fixtureByFixtureId.teams.away.id}`}
+          >
+            <Image
+              src={fixtureByFixtureId.teams.away.logo}
+              alt="AwayLogoMatch"
+              width={250}
+              height={250}
+            />
+          </Link>
+        </div>
+      </div>
+      <div className="flex flex-col w-full justify-center items-center py-5 md:p-10
+            bg-gradient-to-b from-red-800/60 to-red-800/10">
+        <div className="flex flex-col justify-center items-center py-2">
+          <div>{fixtureByFixtureId.league.name}</div>
+          <div>{fixtureByFixtureId.league.round}</div>
+        </div>
+        <div className="flex justify-center items-center w-full">
+          <div className="flex flex-col w-1/2 justify-center items-center p-1">
+            <div className="text-xl md:text-2xl text-center">
+              {fixtureByFixtureId.teams.home.name}
+            </div>
+          </div>
+          <div className="flex flex-col w-1/2 justify-center items-center p-1">
+            <div className="text-xl md:text-2xl text-center">
+              {fixtureByFixtureId.teams.away.name}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }
 
-export default page
+export default Page;
