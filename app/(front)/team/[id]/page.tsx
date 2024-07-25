@@ -4,6 +4,16 @@ import { Fixture, Team } from "@/utils/type";
 import Image from "next/image";
 import getFixtureByTeamId from "@/utils/getApis/getFixtureByTeamId";
 import Fixtures from "./components/fixtures";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title:
+    process.env.NEXT_PUBLIC_APP_NAME ||
+    "SantSport | Team Information ",
+  description:
+    process.env.NEXT_PUBLIC_APP_DESC ||
+    "All football team information ranging from EPL LA LIGA LEAGUE 1. get all the live scores, previous matches results, upcoming matches, team form, top scores, all league and countries  football games result and fixtures.",
+};
 
 type PageProps = {
   params: {
@@ -79,7 +89,7 @@ const Page = async ({ params }: PageProps) => {
           </div>
         </div>
         <div className="flex flex-col md:w-2/3 justify-center items-center">
-        <Fixtures />
+        <Fixtures fixturesByTeamId={fixturesByTeamId} teamId={parseInt(params.id)} />
         </div>
       </div>
     </div>
