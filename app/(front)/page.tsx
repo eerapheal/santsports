@@ -5,7 +5,7 @@ import { AllFixtures, Standing } from "@/utils/type";
 import getStandings from "@/utils/getApis/getStanding";
 import Loading from "./loading";
 import getFixturesForFiveLeague from "@/utils/getApis/getFixturesForFiveLeague";
-simport StandingFixtures from "@/components/home/standing.fixtures"
+import StandingFixtures from "@/components/home/standing.fixtures"
 
 export const metadata: Metadata = {
   title:
