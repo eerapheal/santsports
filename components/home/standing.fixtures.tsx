@@ -49,13 +49,13 @@ const StandingFixtures = ({ standingData, filteredFixtures }: { standingData: St
       <div className="flex justify-center items-center lg:w-3/5 md:p-10 py-5">
         <div className="flex flex-col justify-center items-center bg-gradient-to-b from-black/40 w-full text-neutral-100 rounded-xl">
           <div className="w-full flex flex-col justify-center items-center">
-            <div className="p-2 font-bold capitalize">Sanding</div>
-            <div className="flex justify-center w-full">
+            <div className="p-2 font-bold capitalize">Standing</div>
+            <div className="flex justify-center whitespace-nowrap w-full overflow-x-auto scrollbar-hidden">
               {menuItems.map((items, i) => (
                 <button
                   key={i}
                   onClick={() => handleTabClick(i)}
-                  className={`w-full p-4 rounded md:text-base font-bold ${i === activeTab
+                  className={`w-[70px] p-4 whitespace-nowrap rounded md:text-base font-bold ${i === activeTab
                     ? "text-neutral-100"
                     : "text-gray-300 bg-black/40"
                     }`}
@@ -66,7 +66,7 @@ const StandingFixtures = ({ standingData, filteredFixtures }: { standingData: St
             </div>
             <div
               ref={menuRef}
-              className="w-full flex overflow-x-hidden snap-x scrollbar-none scroll-smooth text-xs md:text-sm"
+              className="w-full flex overflow-x-auto snap-x scrollbar-hidden scroll-smooth text-xs md:text-sm"
             >
               {standingData.map((responseData, i) => (
                 <div
@@ -76,8 +76,8 @@ const StandingFixtures = ({ standingData, filteredFixtures }: { standingData: St
                   <div className="flex flex-col justify-between p-2 w-full">
                     <div className="flex w-full p-1">
                       <div className="w-1/12">Rank</div>
-                      <div className="w-3/12">Team</div>
-                      <ul className="w-6/12 flex text-sm justify-evenly">
+                      <div className="w-4/12">Team</div>
+                      <ul className="w-7/12 flex text-sm justify-evenly">
                         <li className="w-full text-center">M</li>
                         <li className="w-full text-center">W</li>
                         <li className="w-full text-center">D</li>
@@ -87,7 +87,6 @@ const StandingFixtures = ({ standingData, filteredFixtures }: { standingData: St
                         <li className="w-full text-center">GA</li>
                         <li className="w-full text-center">GD</li>
                       </ul>
-                      <div className="w-2/12 text-center">Form</div>
                     </div>
                     {responseData.league.standings[0].map((team, j) => (
                       <Link
@@ -99,7 +98,7 @@ const StandingFixtures = ({ standingData, filteredFixtures }: { standingData: St
                         <div className="w-1/12 text-xs flex px-2 justify-center items-center">
                           {j + 1}
                         </div>
-                        <div className="w-3/12 text-xs flex items-center">
+                        <div className="w-4/12 text-xs flex items-center">
                           <Image
                             src={team.team.logo}
                             alt={team.team.name}
@@ -109,7 +108,7 @@ const StandingFixtures = ({ standingData, filteredFixtures }: { standingData: St
                           />
                           {team.team.name}
                         </div>
-                        <ul className="w-6/12 flex text-xs justify-center items-center">
+                        <ul className="w-7/12 flex text-xs justify-center items-center">
                           <li className="w-full text-center">
                             {team.all.played}
                           </li>
@@ -133,22 +132,6 @@ const StandingFixtures = ({ standingData, filteredFixtures }: { standingData: St
                             {team.goalsDiff}
                           </li>
                         </ul>
-                        <div className="w-2/12 flex justify-center items-center">
-                          {team.form?.split("").map((char, i) => (
-                            <div
-                              key={char + i}
-                              className={`opacity-80 w-3 h-3 m-[1px] rounded-full
-                                                                        ${char ===
-                                  "L"
-                                  ? "bg-red-500"
-                                  : char ===
-                                    "D"
-                                    ? "bg-gray-500"
-                                    : "bg-green-500"
-                                }`}
-                            ></div>
-                          ))}
-                        </div>
                       </Link>
                     ))}
                   </div>

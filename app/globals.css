@@ -65,3 +65,18 @@
   animation: logo-pop-right 0.8s ease;
   transform: translateY(0px) rotateY(-50deg);
 }
+
+/* Custom scrollbar styles */
+.scrollbar-hidden::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+.scrollbar-hidden::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+.scrollbar-hidden::-webkit-scrollbar-track {
+  background: transparent;
+}
+
