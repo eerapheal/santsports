@@ -21,7 +21,7 @@ const HomePage = async () => {
   const filteredFixtures: AllFixtures[] = await getFixturesForFiveLeague();
 
   return (
-    <div className="flex flex-col justify-center items-center w-full md:p-10">
+    <div className="flex flex-col justify-center items-center w-full">
       <Suspense fallback={<Loading />}>
         <StandingFixtures
           standingData={standingData}

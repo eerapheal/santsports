@@ -28,7 +28,7 @@ const Page = async ({
 
   if (!fixtureByFixtureId) {
     return (
-      <div className="flex w-full justify-center items-center py-5">
+      <div className="flex w-full  justify-center items-center py-5">
         <div className="flex max-w-7xl p-5 w-full md:flex-row justify-center items-center text-neutral-100">
           No Fixture Info Available
         </div>
@@ -37,7 +37,7 @@ const Page = async ({
   }
 
   return (
-    <div className="flex flex-col w-full justify-center items-center py-10 md:p-10 text-neutral-100 bg-gradient-to-br from-blue-700 ">
+    <div className="flex flex-col m-15 mx-auto justify-center items-center py-10 md:p-10 text-neutral-100 bg-gradient-to-br from-blue-700 ">
       <div className="flex w-full max-w-7xl items-center justify-center perspective pb-10 md:pb-20">
         <div className="w-1/3 flex justify-center rounded-full animate-logo-pop-left logo-shadow">
           <Link

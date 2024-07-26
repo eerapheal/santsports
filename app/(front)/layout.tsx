@@ -3,6 +3,6 @@ export default function FrontLayout({
   }: Readonly<{
     children: React.ReactNode;
   }>) {
-    return <main className='container flex-grow'>{children}</main>;
+    return <main className=''>{children}</main>;
   }
   
