@@ -37,7 +37,7 @@ const Page = async ({
   }
 
   return (
-    <div className="flex flex-col m-15 mx-auto justify-center items-center py-10 md:p-10 text-neutral-100 bg-gradient-to-br from-blue-700 ">
+    <div className="flex flex-col m-15 mx-auto justify-center items-center py-10 md:p-10 text-neutral-100 bg-gradient-to-br from-blue-700 logo-shadow">
       <div className="flex w-full max-w-7xl items-center justify-center perspective pb-10 md:pb-20">
         <div className="w-1/3 flex justify-center rounded-full animate-logo-pop-left logo-shadow">
           <Link
@@ -102,7 +102,7 @@ const Page = async ({
         </div>
       </div>
       <div className="flex flex-col w-full justify-center items-center py-5 md:p-10
-            rounded bg-gradient-to-b from-black/60 to-red-800/10">
+            rounded bg-gradient-to-b from-black/60 to-red-800/10 logo-shadow">
         <div className="flex flex-col justify-center items-center py-2">
           <div>{fixtureByFixtureId.league.name}</div>
           <div>{fixtureByFixtureId.league.round}</div>

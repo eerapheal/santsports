@@ -19,7 +19,7 @@ const FixtureItem = ({ match, index }: PageProps) => {
     <Link
       href={`/match/${match.fixture.id}`}
       key={match.fixture.id}
-      className={`flex w-full p-2 justify-center items-center h-36 hover:bg-red-800/50 ${
+      className={`flex w-full p-2 justify-center items-center h-36 hover:bg-red-800/30 ${
         index % 2 === 0 ? "bg-black/40" : ""
       } animated-div`}
     >

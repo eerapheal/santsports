@@ -45,17 +45,17 @@ const StandingFixtures = ({ standingData, filteredFixtures }: { standingData: St
   }, []);
 
   return (
-    <div className="flex flex-col w-full max-w-7xl bg-gradient-to-br from-blue-700 lg:flex-row">
-      <div className="flex justify-center items-center lg:w-3/5 md:p-10 py-5">
-        <div className="flex flex-col justify-center items-center bg-gradient-to-b from-black/40 w-full text-neutral-100 rounded-xl">
+    <div className="flex flex-col w-full max-w-7xl bg-gradient-to-br from-blue-700 lg:flex-row logo-shadow">
+      <div className="flex justify-center items-center lg:w-3/5 p-2 md:p-10">
+        <div className="flex flex-col justify-center items-center bg-gradient-to-b from-black/40 logo-shadow w-full text-neutral-100 rounded-xl">
           <div className="w-full flex flex-col justify-center items-center">
             <div className="p-2 font-bold capitalize">Standing</div>
-            <div className="flex justify-center whitespace-nowrap w-full overflow-x-auto scrollbar-hidden">
+            <div className="flex justify-center mx-2 whitespace-nowrap w-full overflow-x-auto scrollbar-hidden">
               {menuItems.map((items, i) => (
                 <button
                   key={i}
                   onClick={() => handleTabClick(i)}
-                  className={`w-[70px] p-4 whitespace-nowrap rounded md:text-base font-bold ${i === activeTab
+                  className={`max-w-[190px] p-4 whitespace-nowrap rounded md:text-base font-bold ${i === activeTab
                     ? "text-neutral-100"
                     : "text-gray-300 bg-black/40"
                     }`}
@@ -142,7 +142,7 @@ const StandingFixtures = ({ standingData, filteredFixtures }: { standingData: St
         </div>
       </div>
       <div className="flex justify-center items-center lg:w-2/5 p-10 lg:pr-10 pb-10 lg:pt-10 ">
-        <div className="flex flex-col justify-center items-center bg-gradient-to-b from-black/40 w-full  text-neutral-100 rounded-xl h-full">
+        <div className="flex flex-col justify-center items-center bg-gradient-to-b from-black/40 logo-shadow w-full  text-neutral-100 rounded-xl h-full">
           <div className="w-full flex flex-col justify-center items-center">
             <div className="p-2 font-bold">
               Upcoming Matches
