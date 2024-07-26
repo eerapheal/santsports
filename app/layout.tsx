@@ -26,14 +26,16 @@ export default function RootLayout({
               alt="Sant-sport-background-logo"
               title="Sant-sport-background-logo"
               className="object-cover w-full h-full"
-              width={500}
-              height={500}
+              width={1000}
+              height={700}
             />
           </div>
           <div className="absolute inset-0 w-full h-full bg-gradient-to-b from-black/10 to-black">
             <div className="relative">
               <NavBar />
+              <div className="md:p-10">
               {children}
+              </div>
             </div>
           </div>
         </div>

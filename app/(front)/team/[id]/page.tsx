@@ -23,7 +23,7 @@ type PageProps = {
 const Page = async ({ params }: PageProps) => {
   let teamInfo: Team | undefined = await getTeamInfoByTeamId(parseInt(params.id));
   let fixturesByTeamId: Fixture[] = await getFixtureByTeamId(parseInt(params.id));
-  
+
   if (!teamInfo) {
     return (
       <div className="flex justify-center items-center py-5">
@@ -35,9 +35,9 @@ const Page = async ({ params }: PageProps) => {
   };
 
   return (
-    <div className="flex lg:gap-5 justify-center items-center text-neutral-100 bg-gradient-to-br from-blue-700">
-      <div className="flex flex-col max-w-7xl p-5 w-full lg:flex-row">
-        <div className="flex flex-col lg:w-1/3 justify-center items-center bg-gradient-to-br  from-blue-700/40 to-blue-400/100 h-[520px] p-10">
+    <div className="flex lg:gap-5 w-full max-w-7xl justify-center items-center text-neutral-100 bg-gradient-to-br from-blue-700">
+      <div className="flex gap-10 flex-col max-w-7xl p-5 w-full lg:flex-row">
+        <div className="flex flex-col lg:w-1/3 justify-center items-center rounded bg-gradient-to-br  from-blue-700/40 to-blue-400/100 h-[494px] p-10">
           <Image
             src={teamInfo.team.logo}
             alt="teamLogo"
@@ -88,8 +88,8 @@ const Page = async ({ params }: PageProps) => {
             </ul>
           </div>
         </div>
-        <div className="flex flex-col md:w-2/3 justify-center items-center">
-        <Fixtures fixturesByTeamId={fixturesByTeamId} teamId={parseInt(params.id)} />
+        <div className="flex flex-col md:w-2/3 justify-center items-center rounded">
+          <Fixtures fixturesByTeamId={fixturesByTeamId} teamId={parseInt(params.id)} />
         </div>
       </div>
     </div>
