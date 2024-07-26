@@ -54,10 +54,10 @@ const Fixtures = ({ fixturesByTeamId, teamId }: PageProps) => {
     <div className="flex flex-col w-full justify-center items-center text-neutral-100">
       {/* Upcoming Matches Section */}
       <div className="flex flex-col w-full justify-center items-center rounded rounded-b-none p-2 bg-gradient-to-br from-blue-400/100 to-blue-700/40">
-        <strong className="flex items-center justify-center w-full p-2 rounded rounded-b-none bg-gradient-to-br from-blue-700/100 to-blue-900/40">
+        <strong className="flex items-center justify-center w-full p-2 rounded rounded-b-none bg-gradient-to-br from-blue-700/100 to-blue-900/40 logo-shadow">
           Upcoming Match
         </strong>
-        <div className="flex items-center justify-center rounded-3xl relative overflow-hidden w-full p-2 bg-gradient-to-r from-blue/90 to-blue/40 hover:bg-blue-200/10">
+        <div className="flex items-center justify-center rounded-3xl relative overflow-hidden w-full p-2 bg-gradient-to-r from-blue/90 to-blue/40 hover:bg-red-700/70">
           <button className="absolute left-0 top-1/2 transform -translate-y-1/2 p-2 z-10"
             onClick={prevItem}
             disabled={currentIndex === 0}
@@ -68,11 +68,11 @@ const Fixtures = ({ fixturesByTeamId, teamId }: PageProps) => {
             style={{ transform: `translateX(${getTranslateX(currentIndex)})` }}
           >
             {
-              fixturesFuture.map((fixture) => (
+              fixturesFuture.map((fixture, index) => (
                 <Link
                   href={`/match/${fixture.fixture.id}`}
                   className="w-full flex-shrink-0 flex text-neutral-100 items-center"
-                  key={fixture.fixture.id}
+                  key={`${fixture.fixture.id}-${index}`}
                 >
                   <div className="flex flex-col justify-center items-center w-3/12 text-sm text-center">
                     <Image
@@ -145,18 +145,18 @@ const Fixtures = ({ fixturesByTeamId, teamId }: PageProps) => {
 
       {/* Match Results Section */}
       <div className="flex flex-col w-full justify-center items-center p-2 rounded rounded-t-none bg-gradient-to-br from-blue-400/100 to-blue-700/40">
-        <strong className="flex items-center justify-center w-full p-2 rounded rounded-b-none bg-gradient-to-br from-blue-700/100 to-blue-900/40">
+        <strong className="flex items-center justify-center w-full p-2 rounded rounded-b-none bg-gradient-to-br from-blue-700/100 to-blue-900/40 logo-shadow">
           Match Result
         </strong>
         {
-          firstItemsFixturesDone.map((fixture, i) => (
+          firstItemsFixturesDone.map((fixture, index) => (
             <div
-              className="flex w-full text-neutral-100 items-center h-36 hover:bg-blue-200/10"
-              key={fixture.fixture.id}
+              className="flex w-full text-neutral-100 items-center h-36 hover:bg-red-700/70"
+              key={`${fixture.fixture.id}-${index}`}
             >
               <Link
                 href={`/match/${fixture.fixture.id}`}
-                className="w-full flex text-neutral-100 items-center h-36 bg-gradient-to-r from-blue/90 to-blue/40 hover:bg-blue-200/10"
+                className="w-full flex text-neutral-100 items-center h-36 bg-gradient-to-r from-blue/90 to-blue/40"
               >
                 <div className="flex flex-col justify-center items-center w-3/12 text-sm text-center">
                   <Image
@@ -227,9 +227,9 @@ const Fixtures = ({ fixturesByTeamId, teamId }: PageProps) => {
         }
         {
           visibleItemsCount < fixturesByTeamId.length && (
-            <div className="p-2">
+            <div className="p-2 logo-shadow">
               <button
-                className="bg-gradient-to-r from-blue-900/80 to-blue-400/60 p-4 rounded-2xl"
+                className="bg-gradient-to-r from-blue-900/80 to-blue-400/60 p-4 rounded-2xl hover:bg-red-700/70"
                 onClick={handleShowMore}
               >
                 Show More
