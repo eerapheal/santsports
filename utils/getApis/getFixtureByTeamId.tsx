@@ -29,7 +29,7 @@ export default async function getFixtureByTeamId(id: number): Promise<Fixture[]>
     });
     return fixturesByTeamIdSorted;
   } catch (error) {
-    console.log("An error ocurred while fetching fixtures by team Id:", error)
+    console.error("An error ocurred while fetching fixtures by team Id:", error)
     throw error;
   };
 };

@@ -17,7 +17,7 @@ const LiveMatchesfixtureItem = ({ match, index }: PageProps) => {
   return today.isBefore(matchDate) ? (
     <Link
       href={`/match/${match.fixture.id}`}
-      key={match.fixture.id}
+      key={`${match.fixture.id}-${index}`}
       className={`flex w-full p-2 justify-center logo-shadow items-center min-h-18 hover:bg-red-800/30 ${index % 2 === 0 ? "bg-black/40" : ""} animated-div`}
     >
       <div className="flex w-full flex-col justify-center items-center">

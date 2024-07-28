@@ -100,7 +100,7 @@ export default function getLiveMatchSample(): AllFixtures[] {
     },
     {
       "fixture": {
-        "id": 1014217,
+        "id": 1010217,
         "referee": null,
         "timezone": "UTC",
         "date": "2024-07-30T13:04:59+00:00",
@@ -460,7 +460,7 @@ export default function getLiveMatchSample(): AllFixtures[] {
     },
     {
       "fixture": {
-        "id": 1014217,
+        "id": 101417,
         "referee": null,
         "timezone": "UTC",
         "date": "2024-07-28T13:04:59+00:00",
@@ -640,7 +640,7 @@ export default function getLiveMatchSample(): AllFixtures[] {
     },
     {
       "fixture": {
-        "id": 1014217,
+        "id": 104217,
         "referee": null,
         "timezone": "UTC",
         "date": "2024-07-28T13:04:59+00:00",
@@ -939,9 +939,9 @@ export default function getLiveMatchSample(): AllFixtures[] {
   try {
     const jsonData = JSON.parse(fixturesSample);
     liveMatchSampleJson = jsonData;
-    console.log(liveMatchSampleJson)
+    console.error(liveMatchSampleJson)
   } catch (error) {
-    console.log("Error parsing JSON: ", error);
+    console.error("Error parsing JSON: ", error);
   }
 
   return liveMatchSampleJson;

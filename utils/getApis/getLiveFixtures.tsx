@@ -21,11 +21,10 @@ const getLiveFixturesApi = async (): Promise<Fixture[]> => {
   try {
     const response = await fetch(url, options);
     const data = await response.json();
-    console.log("API response data:", data);
     const fixtures: Fixture[] = data.response;
     return fixtures || [];
   } catch (err) {
-    console.log(`Error fetching live fixtures: ${err}`);
+    console.error(`Error fetching live fixtures: ${err}`);
     return [];
   }
 };
@@ -33,7 +32,7 @@ const getLiveFixturesApi = async (): Promise<Fixture[]> => {
 export default async function getLiveFixtures(): Promise<AllFixtures[]> {
   if (USE_SAMPLE) {
     const sampleData = getLiveMatchSample();
-    console.log("Sample data:", JSON.stringify(sampleData, null, 2));
+    console.error("Sample data:", JSON.stringify(sampleData, null, 2));
     return sampleData;
   }
 
@@ -50,7 +49,7 @@ export default async function getLiveFixtures(): Promise<AllFixtures[]> {
 
     return [{ name: 'Live Matches This Week', fixtures: filteredFixtures }];
   } catch (error) {
-    console.log("Error fetching live fixtures within a week", error);
+    console.error("Error fetching live fixtures within a week", error);
     throw error;
   }
 }

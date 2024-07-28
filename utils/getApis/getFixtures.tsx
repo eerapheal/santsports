@@ -102,7 +102,7 @@ export default async function getFixtures(): Promise<AllFixtures[]> {
 
     return allFixturesByLeague;
   } catch (error) {
-    console.log(`Error fetching all fixtures: ${error}`);
+    console.error(`Error fetching all fixtures: ${error}`);
     throw error;
   }
 }
