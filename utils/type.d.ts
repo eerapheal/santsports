@@ -44,16 +44,16 @@ type Games = {
 
 type FixtureInfo = {
   id: number;
-  referee: string;
+  referee: string | null;
   timezone: string;
   date: string;
   timestamp: number;
   periods: {
     first: number;
-    second: number;
+    second: number | null;
   };
   venue: {
-    id: number;
+    id: number | null;
     name: string;
     city: string;
   };
@@ -69,7 +69,7 @@ type LeagueFixtures = {
   name: string;
   country: string;
   logo: string;
-  flag: string;
+  flag: string | null;
   season: number;
   round: string;
 };
@@ -101,12 +101,42 @@ type Score = {
   penalty: Goals;
 };
 
+type Times = {
+  elapsed: number;
+  extra: number | null;
+};
+
+type Players = {
+  id: number | null;
+  name: string | null;
+};
+
+type Assists = {
+  id: number | null;
+  name: string | null;
+};
+
+type Events = {
+  time: Times;
+  team: {
+    id: number;
+    name: string;
+    logo: string;
+  };
+  player: Players;
+  assist: Assists;
+  type: string;
+  detail?: string;
+  comments?: string;
+};
+
 type Fixture = {
   fixture: FixtureInfo;
   league: LeagueFixtures;
   teams: Teams;
   goals: Goals;
   score: Score;
+  events: Events[];
 };
 
 type AllFixtures = {
@@ -119,5 +149,15 @@ export {
   Team,
   League,
   Fixture,
-  AllFixtures
+  AllFixtures,
+  FixtureInfo,
+  LeagueFixtures,
+  Games,
+  Goals,
+  Score,
+  Events,
+  Times,
+  Players,
+  Assists,
+  Teams
 };
