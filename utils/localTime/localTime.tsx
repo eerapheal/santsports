@@ -16,8 +16,10 @@ const LocalTime = ({
   useEffect(() => {
     function formatToLocalTime(timeUTC: string): string {
       const newTime = moment(timeUTC);
-      const localDateString = newTime.format('dddd, LL');
-      const localTimeString = newTime.format('LT');
+      // const localDateString = newTime.format('dddd, LL');
+      // const localTimeString = newTime.format('LT');
+      const localDateString = newTime.format('ddd, MMM D');
+      const localTimeString = newTime.format('HH:mm');
       return `${localDateString} ${localTimeString}`;
     }
 
@@ -27,7 +29,7 @@ const LocalTime = ({
   }, []);
 
   return (
-    <div className="flex justify-center items-center text-center">{formattedTime}</div>
+    <div className="flex justify-center items-center text-center">{formattedTime.substring(0,)}</div>
   )
 };
 
