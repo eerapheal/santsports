@@ -32,7 +32,6 @@ const getLiveFixturesApi = async (): Promise<Fixture[]> => {
 export default async function getLiveFixtures(): Promise<AllFixtures[]> {
   if (USE_SAMPLE) {
     const sampleData = getLiveMatchSample();
-    console.error("Sample data:", JSON.stringify(sampleData, null, 2));
     return sampleData;
   }
 

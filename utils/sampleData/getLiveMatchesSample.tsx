@@ -939,7 +939,6 @@ export default function getLiveMatchSample(): AllFixtures[] {
   try {
     const jsonData = JSON.parse(fixturesSample);
     liveMatchSampleJson = jsonData;
-    console.error(liveMatchSampleJson)
   } catch (error) {
     console.error("Error parsing JSON: ", error);
   }
