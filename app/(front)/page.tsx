@@ -6,6 +6,7 @@ import getStandings from "@/utils/getApis/getStanding";
 import Loading from "./loading";
 import getFixturesForFiveLeague from "@/utils/getApis/getFixturesForFiveLeague";
 import StandingFixtures from "@/components/home/standing.fixtures"
+import LiveMatches from "@/components/home/liveMatches/liveMatches";
 
 export const metadata: Metadata = {
   title:
@@ -22,6 +23,7 @@ const HomePage = async () => {
 
   return (
     <div className="flex flex-col justify-center items-center w-full">
+      <LiveMatches />
       <Suspense fallback={<Loading />}>
         <StandingFixtures
           standingData={standingData}
