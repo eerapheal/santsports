@@ -11,7 +11,7 @@ export default function getLiveMatchSample(): AllFixtures[] {
         "id": 883747,
         "referee": null,
         "timezone": "UTC",
-        "date": "2024-07-28T04:40:00+00:00",
+        "date": "2024-07-31T10:40:00+00:00",
         "timestamp": 1679745600,
         "periods": {
           "first": 1679745600,
@@ -87,6 +87,546 @@ export default function getLiveMatchSample(): AllFixtures[] {
           "player": {
             "id": null,
             "name": null
+          },
+          "assist": {
+            "id": null,
+            "name": null
+          },
+          "type": "Goal",
+          "detail": "Normal Goal",
+          "comments": null
+        }
+      ]
+    },
+    {
+      "fixture": {
+        "id": 1014217,
+        "referee": null,
+        "timezone": "UTC",
+        "date": "2024-07-30T13:04:59+00:00",
+        "timestamp": 1679742000,
+        "periods": {
+          "first": 1679742000,
+          "second": 1679745600
+        },
+        "venue": {
+          "id": null,
+          "name": "Veritas Stadion",
+          "city": "Åbo"
+        },
+        "status": {
+          "long": "Second Half",
+          "short": "2H",
+          "elapsed": 66
+        }
+      },
+      "league": {
+        "id": 667,
+        "name": "Friendlies Clubs",
+        "country": "World",
+        "logo": "https://media-1.api-sports.io/football/leagues/667.png",
+        "flag": null,
+        "season": 2023,
+        "round": "Club Friendlies 3"
+      },
+      "teams": {
+        "home": {
+          "id": 1164,
+          "name": "Inter Turku",
+          "logo": "https://media-1.api-sports.io/football/teams/1164.png",
+          "winner": true
+        },
+        "away": {
+          "id": 2082,
+          "name": "IF Gnistan",
+          "logo": "https://media-1.api-sports.io/football/teams/2082.png",
+          "winner": false
+        }
+      },
+      "goals": {
+        "home": 4,
+        "away": 0
+      },
+      "score": {
+        "halftime": {
+          "home": 3,
+          "away": 0
+        },
+        "fulltime": {
+          "home": null,
+          "away": null
+        },
+        "extratime": {
+          "home": null,
+          "away": null
+        },
+        "penalty": {
+          "home": null,
+          "away": null
+        }
+      },
+      "events": [
+        {
+          "time": {
+            "elapsed": 28,
+            "extra": null
+          },
+          "team": {
+            "id": 1164,
+            "name": "Inter Turku",
+            "logo": "https://media-3.api-sports.io/football/teams/1164.png"
+          },
+          "player": {
+            "id": 40259,
+            "name": "P. Forsell"
+          },
+          "assist": {
+            "id": null,
+            "name": null
+          },
+          "type": "Goal",
+          "detail": "Normal Goal",
+          "comments": null
+        },
+        {
+          "time": {
+            "elapsed": 30,
+            "extra": null
+          },
+          "team": {
+            "id": 1164,
+            "name": "Inter Turku",
+            "logo": "https://media-1.api-sports.io/football/teams/1164.png"
+          },
+          "player": {
+            "id": null,
+            "name": "B. Ampofo"
+          },
+          "assist": {
+            "id": null,
+            "name": null
+          },
+          "type": "Goal",
+          "detail": "Normal Goal",
+          "comments": null
+        },
+        {
+          "time": {
+            "elapsed": 33,
+            "extra": null
+          },
+          "team": {
+            "id": 2082,
+            "name": "IF Gnistan",
+            "logo": "https://media-3.api-sports.io/football/teams/2082.png"
+          },
+          "player": {
+            "id": null,
+            "name": null
+          },
+          "assist": {
+            "id": null,
+            "name": null
+          },
+          "type": "Card",
+          "detail": "Yellow Card",
+          "comments": null
+        },
+        {
+          "time": {
+            "elapsed": 37,
+            "extra": null
+          },
+          "team": {
+            "id": 1164,
+            "name": "Inter Turku",
+            "logo": "https://media-3.api-sports.io/football/teams/1164.png"
+          },
+          "player": {
+            "id": 40259,
+            "name": "P. Forsell"
+          },
+          "assist": {
+            "id": null,
+            "name": null
+          },
+          "type": "Goal",
+          "detail": "Normal Goal",
+          "comments": null
+        },
+        {
+          "time": {
+            "elapsed": 55,
+            "extra": null
+          },
+          "team": {
+            "id": 1164,
+            "name": "Inter Turku",
+            "logo": "https://media-3.api-sports.io/football/teams/1164.png"
+          },
+          "player": {
+            "id": 55533,
+            "name": "T. Stavitski"
+          },
+          "assist": {
+            "id": null,
+            "name": null
+          },
+          "type": "Goal",
+          "detail": "Normal Goal",
+          "comments": null
+        }
+      ]
+    },
+    {
+      "fixture": {
+        "id": 1014217,
+        "referee": null,
+        "timezone": "UTC",
+        "date": "2024-08-28T13:04:59+00:00",
+        "timestamp": 1679742000,
+        "periods": {
+          "first": 1679742000,
+          "second": 1679745600
+        },
+        "venue": {
+          "id": null,
+          "name": "Veritas Stadion",
+          "city": "Åbo"
+        },
+        "status": {
+          "long": "Second Half",
+          "short": "2H",
+          "elapsed": 66
+        }
+      },
+      "league": {
+        "id": 667,
+        "name": "Friendlies Clubs",
+        "country": "World",
+        "logo": "https://media-1.api-sports.io/football/leagues/667.png",
+        "flag": null,
+        "season": 2023,
+        "round": "Club Friendlies 3"
+      },
+      "teams": {
+        "home": {
+          "id": 1164,
+          "name": "Inter Turku",
+          "logo": "https://media-1.api-sports.io/football/teams/1164.png",
+          "winner": true
+        },
+        "away": {
+          "id": 2082,
+          "name": "IF Gnistan",
+          "logo": "https://media-1.api-sports.io/football/teams/2082.png",
+          "winner": false
+        }
+      },
+      "goals": {
+        "home": 4,
+        "away": 0
+      },
+      "score": {
+        "halftime": {
+          "home": 3,
+          "away": 0
+        },
+        "fulltime": {
+          "home": null,
+          "away": null
+        },
+        "extratime": {
+          "home": null,
+          "away": null
+        },
+        "penalty": {
+          "home": null,
+          "away": null
+        }
+      },
+      "events": [
+        {
+          "time": {
+            "elapsed": 28,
+            "extra": null
+          },
+          "team": {
+            "id": 1164,
+            "name": "Inter Turku",
+            "logo": "https://media-3.api-sports.io/football/teams/1164.png"
+          },
+          "player": {
+            "id": 40259,
+            "name": "P. Forsell"
+          },
+          "assist": {
+            "id": null,
+            "name": null
+          },
+          "type": "Goal",
+          "detail": "Normal Goal",
+          "comments": null
+        },
+        {
+          "time": {
+            "elapsed": 30,
+            "extra": null
+          },
+          "team": {
+            "id": 1164,
+            "name": "Inter Turku",
+            "logo": "https://media-1.api-sports.io/football/teams/1164.png"
+          },
+          "player": {
+            "id": null,
+            "name": "B. Ampofo"
+          },
+          "assist": {
+            "id": null,
+            "name": null
+          },
+          "type": "Goal",
+          "detail": "Normal Goal",
+          "comments": null
+        },
+        {
+          "time": {
+            "elapsed": 33,
+            "extra": null
+          },
+          "team": {
+            "id": 2082,
+            "name": "IF Gnistan",
+            "logo": "https://media-3.api-sports.io/football/teams/2082.png"
+          },
+          "player": {
+            "id": null,
+            "name": null
+          },
+          "assist": {
+            "id": null,
+            "name": null
+          },
+          "type": "Card",
+          "detail": "Yellow Card",
+          "comments": null
+        },
+        {
+          "time": {
+            "elapsed": 37,
+            "extra": null
+          },
+          "team": {
+            "id": 1164,
+            "name": "Inter Turku",
+            "logo": "https://media-3.api-sports.io/football/teams/1164.png"
+          },
+          "player": {
+            "id": 40259,
+            "name": "P. Forsell"
+          },
+          "assist": {
+            "id": null,
+            "name": null
+          },
+          "type": "Goal",
+          "detail": "Normal Goal",
+          "comments": null
+        },
+        {
+          "time": {
+            "elapsed": 55,
+            "extra": null
+          },
+          "team": {
+            "id": 1164,
+            "name": "Inter Turku",
+            "logo": "https://media-3.api-sports.io/football/teams/1164.png"
+          },
+          "player": {
+            "id": 55533,
+            "name": "T. Stavitski"
+          },
+          "assist": {
+            "id": null,
+            "name": null
+          },
+          "type": "Goal",
+          "detail": "Normal Goal",
+          "comments": null
+        }
+      ]
+    },
+    {
+      "fixture": {
+        "id": 1014217,
+        "referee": null,
+        "timezone": "UTC",
+        "date": "2024-07-28T13:04:59+00:00",
+        "timestamp": 1679742000,
+        "periods": {
+          "first": 1679742000,
+          "second": 1679745600
+        },
+        "venue": {
+          "id": null,
+          "name": "Veritas Stadion",
+          "city": "Åbo"
+        },
+        "status": {
+          "long": "Second Half",
+          "short": "2H",
+          "elapsed": 66
+        }
+      },
+      "league": {
+        "id": 667,
+        "name": "Friendlies Clubs",
+        "country": "World",
+        "logo": "https://media-1.api-sports.io/football/leagues/667.png",
+        "flag": null,
+        "season": 2023,
+        "round": "Club Friendlies 3"
+      },
+      "teams": {
+        "home": {
+          "id": 1164,
+          "name": "Inter Turku",
+          "logo": "https://media-1.api-sports.io/football/teams/1164.png",
+          "winner": true
+        },
+        "away": {
+          "id": 2082,
+          "name": "IF Gnistan",
+          "logo": "https://media-1.api-sports.io/football/teams/2082.png",
+          "winner": false
+        }
+      },
+      "goals": {
+        "home": 4,
+        "away": 0
+      },
+      "score": {
+        "halftime": {
+          "home": 3,
+          "away": 0
+        },
+        "fulltime": {
+          "home": null,
+          "away": null
+        },
+        "extratime": {
+          "home": null,
+          "away": null
+        },
+        "penalty": {
+          "home": null,
+          "away": null
+        }
+      },
+      "events": [
+        {
+          "time": {
+            "elapsed": 28,
+            "extra": null
+          },
+          "team": {
+            "id": 1164,
+            "name": "Inter Turku",
+            "logo": "https://media-3.api-sports.io/football/teams/1164.png"
+          },
+          "player": {
+            "id": 40259,
+            "name": "P. Forsell"
+          },
+          "assist": {
+            "id": null,
+            "name": null
+          },
+          "type": "Goal",
+          "detail": "Normal Goal",
+          "comments": null
+        },
+        {
+          "time": {
+            "elapsed": 30,
+            "extra": null
+          },
+          "team": {
+            "id": 1164,
+            "name": "Inter Turku",
+            "logo": "https://media-1.api-sports.io/football/teams/1164.png"
+          },
+          "player": {
+            "id": null,
+            "name": "B. Ampofo"
+          },
+          "assist": {
+            "id": null,
+            "name": null
+          },
+          "type": "Goal",
+          "detail": "Normal Goal",
+          "comments": null
+        },
+        {
+          "time": {
+            "elapsed": 33,
+            "extra": null
+          },
+          "team": {
+            "id": 2082,
+            "name": "IF Gnistan",
+            "logo": "https://media-3.api-sports.io/football/teams/2082.png"
+          },
+          "player": {
+            "id": null,
+            "name": null
+          },
+          "assist": {
+            "id": null,
+            "name": null
+          },
+          "type": "Card",
+          "detail": "Yellow Card",
+          "comments": null
+        },
+        {
+          "time": {
+            "elapsed": 37,
+            "extra": null
+          },
+          "team": {
+            "id": 1164,
+            "name": "Inter Turku",
+            "logo": "https://media-3.api-sports.io/football/teams/1164.png"
+          },
+          "player": {
+            "id": 40259,
+            "name": "P. Forsell"
+          },
+          "assist": {
+            "id": null,
+            "name": null
+          },
+          "type": "Goal",
+          "detail": "Normal Goal",
+          "comments": null
+        },
+        {
+          "time": {
+            "elapsed": 55,
+            "extra": null
+          },
+          "team": {
+            "id": 1164,
+            "name": "Inter Turku",
+            "logo": "https://media-3.api-sports.io/football/teams/1164.png"
+          },
+          "player": {
+            "id": 55533,
+            "name": "T. Stavitski"
           },
           "assist": {
             "id": null,
