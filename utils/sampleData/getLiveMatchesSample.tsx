@@ -11,7 +11,7 @@ export default function getLiveMatchSample(): AllFixtures[] {
         "id": 883747,
         "referee": null,
         "timezone": "UTC",
-        "date": "2024-07-31T10:40:00+00:00",
+        "date": "2025-05-26T08:02:00+00:00",
         "timestamp": 1679745600,
         "periods": {
           "first": 1679745600,
